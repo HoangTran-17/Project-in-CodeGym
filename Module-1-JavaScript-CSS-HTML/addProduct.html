@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng tin bán</title>
+    <link rel="stylesheet" href="addProduct.css">
+
+</head>
+
+<body>
+    <div id="heading">
+        <div id="headingLeft">
+            <a href="dashboard.html" class="trangChu">Trang chủ
+            </a>
+        </div>
+        <div id="headingRight">
+            <a href="addProduct.html" class="trangChu">Đăng tin bán</a>
+        </div>
+    </div>
+    <div id="table">
+        <tr>
+            <h3>Đăng bán xe của bạn</h3>
+        </tr>
+        <tr>
+            <p>Điền đầy đủ thông tin giúp khách hàng dễ tìm xe</p>
+        </tr>
+        <table id="tableSelect">
+            <tr>
+                <th class="tableSelect">Dòng xe</th>
+                <th class="tableSelect">Đời xe</th>
+                <th class="tableSelect">Màu sắc</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="motorcycleLine" id="motorcycleLine">
+                        <option value="Honda SH" class="text-center">Honda SH</option>
+                        <option value="Honda SH Mode" class="text-center">SH Mode</option>
+                        <option value="Honda Air Blade" class="text-center">Air Blade</option>
+                        <option value="Honda Future 125" selected class="text-center">Future 125</option>
+                        <option value="Honda Vision" class="text-center">Vision</option>
+                        <option value="Honda Wave" class="text-center">Wave</option>
+                        <option value="Honda Dream" class="text-center">Dream</option>
+                        <option value="Yamaha Jupiter" class="text-center">Yamaha Jupiter</option>
+                        <option value="Yamaha Exciter 150" class="text-center">Exciter 150</option>
+                        <option value="Yamaha Exciter 135" class="text-center">Exciter 135</option>
+                        <option value="Yamaha Sirius" class="text-center">Sirius</option>
+                        <option value="Yamaha Grande" class="text-center">Grande</option>
+                        <option value="Yamaha Nouvo" class="text-center">Nouvo</option>
+                        <option value="Yamaha NVX 155" class="text-center">NVX 155</option>
+                        <option value="Yamaha NVX 125" class="text-center">NVX 125</option>
+                        <option value="Yamaha Janus" class="text-center">Janus</option>
+                        <option value="Yamaha Acruzo" class="text-center">Acruzo</option>
+                        <option value="Suzuki Viva" class="text-center">Suzuki Viva</option>
+                        <option value="Suzuki Revo" class="text-center">Revo</option>
+                        <option value="Suzuki Fx125" class="text-center">Fx125</option>
+                        <option value="Suzuki Satria" class="text-center">Satria</option>
+                        <option value="Suzuki Raider" class="text-center">Raider</option>
+                        <option value="Suzuki Axelo" class="text-center">Axelo</option>
+                        <option value="Suzuki Hayate" class="text-center">Hayate</option>
+                        <option value="Piaggio Liberty" class="text-center">Piaggio Liberty</option>
+                        <option value="Piaggio Vespa" class="text-center">Vespa</option>
+                        <option value="Piaggio Medley" class="text-center">Medley</option>
+                        <option value="Piaggio Elettrica" class="text-center">Elettrica</option>
+                        <option value="SYM Angel" class="text-center">SYM Angel</option>
+                        <option value="SYM Cuxi" class="text-center">Cuxi</option>
+                        <option value="SYM Attila" class="text-center">Attila</option>
+                        <option value="SYM Elegant" class="text-center">Elegant</option>
+                        <option value="SYM Galaxy" class="text-center">Galaxy</option>
+                        <option value="Khác" class="text-center">Khác</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="year" id="year"> </select>
+                </td>
+                <td>
+                    <select name="color" id="color">
+                        <option value="Trắng" selected class="text-center">Trắng</option>
+                        <option value="Đen" class="text-center">Đen</option>
+                        <option value="Trắng đen" class="text-center">Trắng đen</option>
+                        <option value="Đỏ" class="text-center">Đỏ</option>
+                        <option value=">Đen đỏ" class="text-center">Đen đỏ</option>
+                        <option value="Đỏ trắng" class="text-center">Đỏ trắng</option>
+                        <option value="Xanh" class="text-center">Xanh</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <table id="tableSelect2">
+            <tr>
+                <td class="text-right">Số km đã đi:</td>
+                <td>
+                    <select name="km" id="km">
+                        <option value="0 - 4 999 km">0 - 4,999 km</option>
+                        <option value="5 000 - 9 999 km" selected>5,000 - 9,999 km</option>
+                        <option value="10,000 - 19,999 km">10,000 - 19,999 km</option>
+                        <option value="20,000 - 29,999 km">20,000 - 29,999 km</option>
+                        <option value="30,000 - 49,999 km">30,000 - 49,999 km</option>
+                        <option value="Trên 50,000 km">Trên 50,000 km</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">Giá tiền:</td>
+                <td><input type="text" id="price"></td>
+            </tr>
+            <tr>
+                <td class="text-right">Mô tả:</td>
+                <td><textarea name="" id="details" cols="50" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td class="text-right">Ảnh:</td>
+                <td><input type="text" name="" id="picture"></td>
+            </tr>
+        </table>
+
+        <div>
+
+        </div>
+        <div id="contact">
+        <table>
+                <tr>
+                    <td colspan="2">
+                        <h3>Thông tin liên hệ</h3>
+                    </td>
+                </tr>
+        </table>
+        <table id="contactCenter">
+            <tr>
+                <td class="text-right">Tên:</td>
+                <td><input type="text" name="" id="sellerName"></td>
+            </tr>
+            <tr>
+                <td class="text-right">Số điện thoại</td>
+                <td><input type="tel" id="phoneNumber" pattern="[0]{1}[0-9]{3}-[0-9]{3}-[0-9]{3}"></td>
+            </tr>
+            <tr>
+                <td class="text-right">Địa chỉ:</td>
+                <td>
+                    <select name="address" id="address">
+                        <option value="Tp.Huế" selected>Tp.Huế</option>
+                        <option value="Tx.Hương Thủy">Tx.Hương Thủy</option>
+                        <option value="Tx.Hương Trà">Tx.Hương Trà</option>
+                        <option value="Phong Điền">Phong Điền</option>
+                        <option value="Quảng Điền">Quảng Điền</option>
+                        <option value="Phú Lộc">Phú Lộc</option>
+                        <option value="Phú Vang">Phú Vang</option>
+                        <option value="A Lưới">A Lưới</option>
+                        <option value="Nam Đông">Nam Đông</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+        <div id="divButton">
+            <input type="button" id="button" value="Đăng tin" onclick="addProduct()">
+        </div>
+
+
+    <script src="dashboard.js"></script>
+    <script src="addProduct.js"></script>
+    <script src="details.js"></script>
+</body>
+
+</html>

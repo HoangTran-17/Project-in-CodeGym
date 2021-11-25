@@ -1,0 +1,47 @@
+#heading {
+    background-color: rgb(238, 238, 238);
+    width: auto;
+    height: 50px;
+}
+
+#headingLeft {
+    float: left;
+}
+
+.trangChu {
+    background-color: #007cdc;
+    border-radius: 8px;
+    color: white;
+    margin: auto 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#headingRight {
+    float: right;
+    margin: auto 50px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+}
+#divCenter{
+    margin: auto 100px;
+    width: 800px;
+}
+.imgDetails{
+    width: 400px;
+    height: 300px;
+}
+#divDetails{
+    width: 900px;
+    height: 200px;
+    background-color: rgb(238, 238, 238);
+}
+.textareaDetails{
+    text-align: left;
+    margin: 5px;
+    padding: 5px;
+}

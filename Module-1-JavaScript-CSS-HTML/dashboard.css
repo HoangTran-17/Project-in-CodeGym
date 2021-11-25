@@ -1,0 +1,63 @@
+#heading{
+    background-color: rgb(238, 238, 238);
+    width: auto;
+    height: 50px;
+}
+#headingLeft{
+    float: left;
+}
+.trangChu{
+    background-color: #007cdc;
+    border-radius: 8px;
+    color: white;
+    margin: auto 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#headingRight{
+    float: right;
+    margin: auto 50px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+}
+
+
+#content{
+    background-color: rgb(238, 238, 238);
+    width:1100px;
+    height: 1400px;
+    margin: auto;
+}
+#detailsAdd{
+    padding: 10px 30px;
+}
+.productsShow {
+    width: 1100px;
+    height: auto;
+}
+.tbProduct {
+
+    width: 200px;
+    height: 300px;
+    margin: 5px 10px;
+    float: left;
+    background-color: white;
+    text-align: center;
+
+}
+.imgShow {
+
+    width: 200px;
+    height: 150px;
+}
+.textTbProduct {
+    color: black;
+    text-align: center;
+    margin: 5px 10px;
+    font-size: 14px;
+    padding: 5px;
+}
