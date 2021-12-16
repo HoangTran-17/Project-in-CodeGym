@@ -10,7 +10,7 @@
 <center>
 
     <h1>User Management</h1>
-    <a href="/home"> Back Home</a>
+    <a href="${pageContext.request.contextPath}/home"> Back Home</a>
     <h2>
         <a href="/users?action=create">Add New User</a>
     </h2>

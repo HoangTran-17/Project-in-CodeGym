@@ -85,3 +85,5 @@ public class SampleProduct implements Serializable {
         oldSample.year = newSample.year;
     }
 }
+
+

@@ -3,9 +3,9 @@ package motorcycle.model;
 public enum UserStatus {
 	LOCKED("LOCKED"), AVAILABLE("AVAILABLE");
 	
-	private String value;
+	private final String value;
 	
-	private UserStatus(String value) { this.value = value; }
+	UserStatus(String value) { this.value = value; }
 	
 	public String getValue() {	return this.value; }
 	

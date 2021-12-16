@@ -3,7 +3,7 @@ package motorcycle.model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-	private long id;
+	private long userId;
 	private String name;
 	private UserStatus status;
 	private Role role;
@@ -15,7 +15,7 @@ public class User implements Serializable {
 	}
 	
 	public User(long userId, String name, String phone,String address, String password) {
-		this .id = userId;
+		this .userId = userId;
 		this.name = name;
 		this.phone = phone;
 		this.address = address;
@@ -23,7 +23,7 @@ public class User implements Serializable {
 	}
 	
 	public User(long userId, String name, UserStatus status, Role role, String phone, String address, String password) {
-		this .id = userId;
+		this .userId = userId;
 		this.name = name;
 		this.status = status;
 		this.role = role;
@@ -33,9 +33,9 @@ public class User implements Serializable {
 	}
 	
 
-	public long getId() { return id; }
+	public long getId() { return userId; }
 	public void setId(long id) {
-		this .id = id;
+		this .userId = id;
 	}
 	
 	public String getName() {
@@ -86,7 +86,7 @@ public class User implements Serializable {
 //	}
 	
 	public static void transferFields(User oldUser, User newUser) {
-		oldUser .id = newUser.id;
+		oldUser .userId = newUser.userId;
 		oldUser.status = newUser.status;
 		oldUser.name = newUser.name;
 		oldUser.phone = newUser.phone;

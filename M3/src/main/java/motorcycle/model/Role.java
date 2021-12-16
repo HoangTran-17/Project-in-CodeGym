@@ -16,7 +16,6 @@ public enum Role {
 	
 	public static Role fromValue(String value) {
 		Role[] var1 = values();
-
 		for (Role c : var1) {
 			if (c.value.equals(value)) {
 				return c;

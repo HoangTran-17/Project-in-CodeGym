@@ -1,5 +1,6 @@
 package motorcycle.repository;
 
+import motorcycle.connection.MysqlConnection;
 import motorcycle.exception.OperationException;
 import motorcycle.model.News;
 

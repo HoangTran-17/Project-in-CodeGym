@@ -22,12 +22,12 @@
 <div align="center">
     <h2>Nhập thông tin người dùng</h2>
     <span class="${requestScope["classCss"]}">${requestScope["message"]}</span>
-    <form method="post" class="needs-validation" novalidate>
+    <form method="post" action="${pageContext.request.contextPath}/users?action=createUser" class="needs-validation" novalidate>
         <table border="1" cellpadding="5">
             <tr>
                 <th>Tên đăng nhập:</th>
                 <td>
-                    <input type="text" name="userName" id="userName" size="45" class="form-control" required pattern="(^[a-zA-Z0-9_- ]{3,15}$)\b" placeholder="Hoàng Trần">
+                    <input type="text" name="userName" id="userName" size="45" class="form-control" required pattern="(^[ A-Za-z0-9]{6,20}$)\b" placeholder="Hoàng Trần">
 
                     <div class="invalid-feedback">
                         Vui lòng nhập tên đăng nhập (ví dụ: Hoàng Trần).
@@ -37,16 +37,16 @@
             <tr>
                 <th>Số điện thoại:</th>
                 <td>
-                    <input type="text" name="phoneNumber" required class="form-control" id="phoneNumber" size="15" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"/>
+                    <input type="text" name="phoneNumber" required class="form-control" id="phoneNumber" size="15" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b" placeholder="0987654321"/>
                     <div class="invalid-feedback">
-                        Vui lòng nhập số điện thoại (ví dụ: 0973017102).
+                        Vui lòng nhập số điện thoại (ví dụ: 0987654321).
                     </div>
                 </td>
             </tr>
             <tr>
                 <th>Địa chỉ:</th>
                 <td>
-                    <input type="text" required class="form-control" name="address" id="address" size="45" />
+                    <input type="text" required class="form-control" name="address" id="address" size="45" placeholder="131/15 Trần Phú, Tp.Huế"/>
                     <div class="invalid-feedback">
                         Vui lòng nhập địa chỉ!
                     </div>
@@ -55,15 +55,24 @@
             <tr>
                 <th>Mật khẩu:</th>
                 <td>
-                    <input type="password" required class="form-control" name="password" id="password" size="15"/>
+                    <input type="password" required class="form-control" name="password1" id="password1" size="15" pattern="^[A-Za-z0-9]{6,12}$"/>
                     <div class="invalid-feedback">
                         Vui lòng nhập mật khẩu!
                     </div>
                 </td>
             </tr>
             <tr>
+            <th>Nhập lại mật khẩu:</th>
+            <td>
+                <input type="password" required class="form-control" name="password2" id="password2" size="15" pattern="^[A-Za-z0-9]{6,12}$"/>
+                <div class="invalid-feedback">
+                    Vui lòng nhập mật khẩu!
+                </div>
+            </td>
+        </tr>
+            <tr>
                 <td colspan="2" align="center">
-                    <button class="btn btn-outline-primary" type="submit">Save</button>
+                    <button class="btn btn-outline-primary" type="submit">Đăng ký</button>
                 </td>
             </tr>
         </table>

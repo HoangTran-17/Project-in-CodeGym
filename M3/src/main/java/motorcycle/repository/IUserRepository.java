@@ -12,7 +12,7 @@ public interface IUserRepository {
 
 	User getById(long id);
 
-	void getUserByPhoneNumberAndPassword(String phone, String password);
+	User getUserByPhoneNumberAndPassword(String phone, String password);
 
 	List<User> getUsers();
 

@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IUserService {
 
-	void login(String phoneNumber, String password);
+    void signIn(String phoneNumber, String password);
 
-	User getById(long id);
+    User getById(long id);
 
 
 	void addUser(User user);
@@ -17,6 +17,7 @@ public interface IUserService {
 
 	void deleteUser(long id);
 
+	User getUserByPhoneNumberAndPassword(String phoneNumber, String password);
 
 	List<User> getUsers();
 	List<User> selectAllUsers();

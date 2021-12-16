@@ -2,9 +2,7 @@ package motorcycle.services;
 
 import motorcycle.exception.ExitsException;
 import motorcycle.exception.NotFoundException;
-import motorcycle.model.Role;
 import motorcycle.model.User;
-import motorcycle.model.UserStatus;
 import motorcycle.repository.IUserRepository;
 import motorcycle.repository.UserRepository;
 
@@ -19,13 +17,13 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void login(String phoneNumber, String password) {
+	public void signIn(String phoneNumber, String password) {
 		userRepository.getUserByPhoneNumberAndPassword(phoneNumber, password);
 	}
 
 	@Override
-	public User getById(long id) {
-		User user = userRepository.getById(id);
+	public User getById(long userId) {
+		User user = userRepository.getById(userId);
 		if (user == null) {
 			throw new NotFoundException("User is not existed!");
 		}
@@ -34,9 +32,7 @@ public class UserService implements IUserService {
 	@Override
 	public void addUser(User newUser) {
 		if (userRepository.existByPhoneNumber(newUser.getPhoneNumber()))
-			throw new ExitsException("mobile already exist");
-		newUser.setStatus(UserStatus.AVAILABLE);
-		newUser.setRole(Role.USER);
+			throw new ExitsException("Số điện thoại đã tồn tại!");
 		userRepository.add(newUser);
 	}
 	@Override
@@ -51,22 +47,23 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void deleteUser(long id) {
-		userRepository.delete(id);
+	public void deleteUser(long userId) {
+		userRepository.delete(userId);
 	}
 
-	@Override
+    @Override
+    public User getUserByPhoneNumberAndPassword(String phoneNumber, String password) {
+		return userRepository.getUserByPhoneNumberAndPassword(phoneNumber, password);
+    }
+
+    @Override
 	public List<User> getUsers() {
 		return userRepository.getUsers();
 	}
 
 	@Override
 	public List<User> selectAllUsers() {
-		List<User> userList = userRepository.selectAllUsers();
-		if (userList == null)
-			throw new NotFoundException("user not already exists");
-		userRepository.selectAllUsers();
-		return userList;
+		return userRepository.selectAllUsers();
 	}
 
 	@Override
@@ -76,12 +73,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public List<User> selectAllAdmins() {
-		List<User> adminList = userRepository.selectAllAdmins();
-
-		if (adminList == null)
-			throw new NotFoundException("admin not already exists");
-		userRepository.selectAllAdmins();
-		return adminList;
+		return userRepository.selectAllAdmins();
 	}
 //	@Override
 //	public boolean exist(int id) {
