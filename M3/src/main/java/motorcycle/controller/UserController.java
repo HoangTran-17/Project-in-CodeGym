@@ -73,12 +73,12 @@ public class UserController extends HttpServlet {
 
     private void addUser(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        String userName = request.getParameter("userName").trim();
-        String phoneNumber = request.getParameter("phoneNumber").trim();
+        String userName = request.getParameter("userName");
+        String phoneNumber = request.getParameter("phoneNumber");
         long userId = Long.parseLong(phoneNumber.substring(phoneNumber.length()-10));
-        String address = request.getParameter("address").trim();
-        String password = request.getParameter("password".trim());
-        String password2 = request.getParameter("password2".trim());
+        String address = request.getParameter("address");
+        String password = request.getParameter("password");
+        String password2 = request.getParameter("password2");
 
         if (password.equals(password2)) {
             User newUser = new User(userId, userName, AVAILABLE, Role.USER, phoneNumber, address, password);

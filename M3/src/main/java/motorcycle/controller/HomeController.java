@@ -1,6 +1,9 @@
 package motorcycle.controller;
 
+import motorcycle.model.News;
+import motorcycle.model.Role;
 import motorcycle.model.User;
+import motorcycle.services.NewsService;
 import motorcycle.services.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "HomeController", value = "/homePage")
 public class HomeController extends HttpServlet {
@@ -41,24 +45,27 @@ public class HomeController extends HttpServlet {
             dispatcher.forward(request, response);
 
         } else {
-            String role = String.valueOf(user.getRole());
+            Role role = user.getRole();
             HttpSession session = request.getSession(true);
             session.setAttribute("user", user);
             request.setAttribute("user", user.getName());
             String next;
             switch (role) {
-                case "SUPPER ADMIN":
+                case SUPER_ADMIN:
                      next = "/view/supperAdmin.jsp";
                     break;
-                case "ADMIN":
-                    next = "/view/admin.jsp";
+                case ADMIN:
+//                    next = "/view/admin.jsp";
+                    next = "/admin";
                     break;
                 default:
                     next = "/view/home.jsp";
                     break;
             }
-            RequestDispatcher dispatcher = request.getRequestDispatcher(next);
-            dispatcher.forward(request, response);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher(next);
+//            dispatcher.forward(request, response);
+
+            response.sendRedirect(request.getContextPath() + next);
         }
     }
 
@@ -105,7 +112,10 @@ public class HomeController extends HttpServlet {
     private void homePage(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        NewsService newsService = new NewsService();
+        List<News> listNews = newsService.selectAllNews();
         request.setAttribute("user", user);
+        request.setAttribute("listProduct",listNews);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/home.jsp");
         try {
             dispatcher.forward(request, response);

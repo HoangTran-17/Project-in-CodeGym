@@ -56,11 +56,20 @@ public class User implements Serializable {
 		return role;
 	}
 	public void setRole(Role role) { this.role = role;	}
-	
-	public String getPhoneNumber() {
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhoneNumber(String phone) {
+
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

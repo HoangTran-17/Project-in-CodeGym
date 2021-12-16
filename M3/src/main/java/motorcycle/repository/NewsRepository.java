@@ -13,12 +13,12 @@ import java.util.List;
 
 
 public class NewsRepository implements INewsRepository {
-	private static final String INSERT_NEWS_SQL = "INSERT INTO news (id,brand, type, line, color, year, km, price, description) VALUES (?,?,?,?, ?,?,?, ?, ?);";
-	private static final String SELECT_NEWS_BY_ID= "select * from news where id =?";
-	private static final String SELECT_NEWS_BY_NAME= "select * from news where line =\"?\"";
+	private static final String INSERT_NEWS_SQL = "INSERT INTO product (id,brand, type, line, color, year, km, price, description) VALUES (?,?,?,?, ?,?,?, ?, ?);";
+	private static final String SELECT_NEWS_BY_ID = "select * from product where id =?";
+	private static final String SELECT_NEWS_BY_NAME = "select * from news where line =\"?\"";
 
-	private static final String SELECT_ALL_NEWS = "select * from news";
-	private static final String UPDATE_NEWS_SQL = "update news set color = ?,year = ?, km = ?,price = ?,description = ? where id = ?;";
+	private static final String SELECT_ALL_NEWS = "select * from product";
+	private static final String UPDATE_NEWS_SQL = "update product set color = ?,year = ?, km = ?,price = ?,description = ? where id = ?;";
 
 
 
@@ -105,7 +105,6 @@ public class NewsRepository implements INewsRepository {
 	@Override
 	public List<News> selectAllNews() {
 		List<News> news = new ArrayList<>();
-
 		try (Connection connection = MysqlConnection.getInstance().getConnection();
 			 PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_NEWS);) {
 			System.out.println(preparedStatement);
@@ -148,7 +147,5 @@ public class NewsRepository implements INewsRepository {
 		double price = rs.getLong("price");
 		String description = rs.getString("description");
 		return new News(id, userId,brand, type,line,color,year,km,price,description);
-
 	}
-
 }

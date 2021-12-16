@@ -73,8 +73,11 @@ public class NewsController extends HttpServlet {
 
         private void addNew(HttpServletRequest request, HttpServletResponse response) throws
                 ServletException, IOException {
-            long id = Long.parseLong(request.getParameter("id"));
-            long userId = Long.parseLong(request.getParameter("userId"));
+            long id = Long.parseLong("0912345678");
+            if (request.getParameter("userId") != null) {
+                 id = Long.parseLong(request.getParameter("userId"));
+            }
+            long userId = id;
             String brand = request.getParameter("brand").trim();
             String type = request.getParameter("type").trim();
             String line = request.getParameter("line").trim();
@@ -142,7 +145,7 @@ public class NewsController extends HttpServlet {
         }
 
         private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("news/create.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("product/create.jsp");
             dispatcher.forward(request, response);
         }
     }

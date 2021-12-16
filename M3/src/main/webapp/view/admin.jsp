@@ -24,8 +24,8 @@
         </tr>
         <c:forEach var="user" items="${listUser}">
             <tr>
-                <td><c:out value="${user.userName}"/></td>
-                <td><c:out value="${user.phoneNumber}"/></td>
+                <td><c:out value="${user.name}"/></td>
+                <td><c:out value="${user.phone}"/></td>
                 <td><c:out value="${user.status}"/></td>
                 <td><c:out value="${user.address}"/></td>
                 <td><c:out value="${user.password}"/></td>

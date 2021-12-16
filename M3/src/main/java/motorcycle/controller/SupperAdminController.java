@@ -78,7 +78,7 @@ public class SupperAdminController extends HttpServlet {
             ServletException, IOException {
         String name = request.getParameter("adminName").trim();
         String phoneNumber = request.getParameter("phoneNumber").trim();
-        long id = Long.parseLong(phoneNumber);
+        long id = Long.parseLong(phoneNumber.substring(phoneNumber.length()-10));
         String password = request.getParameter("password".trim());
 
         User newUser = new User(id,name, AVAILABLE, Role.ADMIN, phoneNumber, "CodeGym", password);

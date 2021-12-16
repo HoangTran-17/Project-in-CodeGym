@@ -55,7 +55,7 @@
             <tr>
                 <th>Mật khẩu:</th>
                 <td>
-                    <input type="password" required class="form-control" name="password1" id="password1" size="15" pattern="^[A-Za-z0-9]{6,12}$"/>
+                    <input type="password" required class="form-control" name="password" id="password1" size="15" pattern="^[A-Za-z0-9]{6,12}$"/>
                     <div class="invalid-feedback">
                         Vui lòng nhập mật khẩu!
                     </div>

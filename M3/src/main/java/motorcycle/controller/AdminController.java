@@ -151,7 +151,7 @@ public class AdminController extends HttpServlet {
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         List<User> listUser = userService.selectAllUsers();
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("users/listUser.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/admin.jsp");
         dispatcher.forward(request, response);
     }
 

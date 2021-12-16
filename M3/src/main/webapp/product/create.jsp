@@ -24,7 +24,7 @@
 <div style="align-items: center">
     <h2>Đăng xe bán</h2>
     <span class="${requestScope["classCss"]}">${requestScope["message"]}</span>
-    <form method="post" action="/product?action=create" class="needs-validation" novalidate>
+    <form method="post" action="<c:url value="/news?action=create&userId=${user.userId}"/>" class="needs-validation" novalidate>
         <table border="1" cellpadding="5">
             <tr>
                 <th>Hãng xe:</th>
@@ -39,17 +39,10 @@
             <tr>
                 <th>Loại xe:</th>
                 <td>
-                    <section>
-                        <option>Xe tay ga</option>
-                        <option>Xe số</option>
-                        <option>Xe côn tay</option>
-                        <option>Xe phân khối lớn</option>
-                        <option>Xe dưới 50cc</option>
-                    </section>
                     <input type="text" name="type" id="type" size="45" class="form-control" required pattern="(^([A-Z]+[a-z]*[ ]?)+$)\b" placeholder="Xe tay ga">
 
                     <div class="invalid-feedback">
-                        Nhập tên hãng xe(ví dụ: HONDA).
+                        Nhập tên loại xe(ví dụ: Xe tay ga).
                     </div>
                 </td>
             </tr>
@@ -64,12 +57,29 @@
                 </td>
             </tr>
             <tr>
-                <th>Quantity:</th>
+                <th>Màu sắc:</th>
                 <td class="input-group">
-
-                    <input type="text" name="quantity" class="form-control" id="quantity" size="45" required />
+                    <input type="text" name="color" class="form-control" id="color" size="45" required />
                     <div class="invalid-feedback">
-                        Please enter quantity.
+                        Nhập màu xe
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Số km đã đi:</th>
+                <td class="input-group">
+                    <input type="text" name="km" class="form-control" id="km" size="45" required />
+                    <div class="invalid-feedback">
+                        Nhập số km đã đi (Ví dụ: dưới 20,000km).
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Đời xe:</th>
+                <td class="input-group">
+                    <input type="number" name="year" class="form-control" id="year" size="45" required />
+                    <div class="invalid-feedback">
+                        Nhập đời xe (Ví dụ: 2017)
                     </div>
                 </td>
             </tr>
@@ -79,7 +89,12 @@
                     <input type="text" name="price" required class="form-control" id="price" size="45"/>
                 </td>
             </tr>
-
+            <tr>
+                <th>Mô tả:</th>
+                <td>
+                    <input type="text" name="description" required class="form-control" id="description" size="45"/>
+                </td>
+            </tr>
             <tr>
                 <td colspan="2" align="center">
                     <button class="btn btn-outline-primary" type="submit">Save</button>

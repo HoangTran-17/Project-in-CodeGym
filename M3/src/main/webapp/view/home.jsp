@@ -26,14 +26,30 @@
     </header>
 
     <div class="container">
-<%--        <div style="text-align: center">--%>
-<%--            <h1>Welcome to Hue Motorcycle Market</h1>--%>
-<%--            <br>--%>
-<%--            <p></p>--%>
-<%--            <br>--%>
-<%--&lt;%&ndash;            <a href="<c:url ><value>/homePage?action=logOut</value></c:url>">Logout</a>&ndash;%&gt;--%>
-<%--        </div>--%>
-
+        <table style="border: 1px">
+            <caption><h2> Danh sách xe bán</h2></caption>
+            <tr>
+                <th >#</th>
+                <th>Hãng xe</th>
+                <th>Loại xe</th>
+                <th>Dòng xe</th>
+                <th>Màu sắc</th>
+                <th>Năm</th>
+                <th>Số km đã đi</th>
+                <th>Giá bán</th>
+            </tr>
+            <c:forEach var="product" items="${listProduct}">
+                <tr>
+                    <td><c:out value="${product.id}"/></td>
+                    <td><c:out value="${product.brand}"/></td>
+                    <td><c:out value="${product.type}"/></td>
+                    <td><c:out value="${product.line}"/></td>
+                    <td><c:out value="${product.color}"/></td>
+                    <td><c:out value="${product.year}"/></td>
+                    <td><c:out value="${product.price}"/></td>
+                </tr>
+            </c:forEach>
+        </table>
 
     </div>
  <footer>

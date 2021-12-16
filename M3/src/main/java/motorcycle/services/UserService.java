@@ -31,14 +31,14 @@ public class UserService implements IUserService {
 	}
 	@Override
 	public void addUser(User newUser) {
-		if (userRepository.existByPhoneNumber(newUser.getPhoneNumber()))
+		if (userRepository.existByPhoneNumber(newUser.getPhone()))
 			throw new ExitsException("Số điện thoại đã tồn tại!");
 		userRepository.add(newUser);
 	}
 	@Override
 	public User updateUser(User user) {
 		if (userRepository.exist(user.getId())) {
-			if (userRepository.existByPhoneNumber(user.getPhoneNumber()))
+			if (userRepository.existByPhoneNumber(user.getPhone()))
 				throw new ExitsException("Phone number  already exists");
 			return userRepository.update(user);
 		} else

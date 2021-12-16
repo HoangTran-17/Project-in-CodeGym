@@ -81,6 +81,7 @@ public class UserRepository implements IUserRepository {
 		try (Connection connection = MysqlConnection.getInstance().getConnection();
 			 PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS)) {
 			System.out.println(preparedStatement);
+			preparedStatement.executeQuery();
 			ResultSet rs = preparedStatement.executeQuery();
 			while (rs.next()) {
 				users.add(getInfo(rs));
@@ -96,14 +97,9 @@ public class UserRepository implements IUserRepository {
 		List<User> users = new ArrayList<>();
 
 		try (Connection connection = MysqlConnection.getInstance().getConnection();
-
-
 			 PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
 			System.out.println(preparedStatement);
-
 			ResultSet rs = preparedStatement.executeQuery();
-
-
 			while (rs.next()) {
 				users.add(getInfo(rs));
 			}
@@ -199,7 +195,7 @@ public class UserRepository implements IUserRepository {
 	private void setUser(PreparedStatement preparedStatement, User user) throws SQLException {
 		preparedStatement.setLong(1, user.getId());
 		preparedStatement.setString(2, user.getName());
-		preparedStatement.setString(5, user.getPhoneNumber());
+		preparedStatement.setString(5, user.getPhone());
 		preparedStatement.setString(6, user.getAddress());
 	}
 	
